@@ -10,12 +10,12 @@ This project shows how to create an application using streamlit which is then ho
 a gpt model (GPT-4, GPT-4o, etc.) as the base model. 
 
 The important files in this template are:
-* .env: Our environment file, a simple text file used to set environment variables.
-* utils.py: This file contains utility functions that are used throughout the codebase.
-* base_agent.py: This file defines a BaseAgent class that initializes a chat model and embeddings using Azure's OpenAI services, configured with environment variables for deployment and API access.
-* UseCases.py: The page on the streamlit application for use case management.
-* pages/Chatbot.py: The chatbot interface on the application where users can select their use case and speak with BioRAG.
-* app.sh: The script needed to run the app.
+* [.env](https://github.com/jweastman/BioRAG-AI-Template/blob/main/.env): Our environment file, a simple text file used to set environment variables.
+* [utils.py](https://github.com/jweastman/BioRAG-AI-Template/blob/main/utils.py): This file contains utility functions that are used throughout the codebase.
+* [base_agent.py](https://github.com/jweastman/BioRAG-AI-Template/blob/main/base_agent.py): This file defines a BaseAgent class that initializes a chat model and embeddings using Azure's OpenAI services, configured with environment variables for deployment and API access.
+* [UseCases.py](https://github.com/jweastman/BioRAG-AI-Template/blob/main/UseCases.py): The page on the streamlit application for use case management.
+* [pages/Chatbot.py](https://github.com/jweastman/BioRAG-AI-Template/blob/main/pages/Chatbot.py): The chatbot interface on the application where users can select their use case and speak with BioRAG.
+* [app.sh](): The script needed to run the app.
 
 ## Setup instructions
 The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
