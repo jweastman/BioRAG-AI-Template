@@ -6,15 +6,15 @@ and generation-based models. The main goal of a RAG application is to enhance th
 information retrieved from a vast knowledge base. This approach leverages the strengths of both retrieval and generation, providing more coherent and contextually appropriate outputs.
 
 ## About this template
-This project shows how to create an application using streamlit which is then hosted on Domino. We are using Azure OpenAI's `text-embedding-ada-002` model to create the emebeddings of our documents and
-OpenAI's `gpt-4-32k` model as the base model. 
+This project shows how to create an application using streamlit which is then hosted on Domino. We are using an Azure OpenAI embedding model to create the emebeddings of our documents and
+a gpt model (GPT-4, GPT-4o, etc.) as the base model. 
 
 The important files in this template are:
 * .env: Our environment file, a simple text file used to set environment variables.
-* requirements.txt: Requirements file to be used when creating domino 
 * utils.py: This file contains utility functions that are used throughout the codebase.
-* agent.py: This file defines a BaseAgent class that initializes a chat model and embeddings using Azure's OpenAI services, configured with environment variables for deployment and API access.
-* app.py: Streamlit app code.
+* base_agent.py: This file defines a BaseAgent class that initializes a chat model and embeddings using Azure's OpenAI services, configured with environment variables for deployment and API access.
+* UseCases.py: The page on the streamlit application for use case management.
+* pages/Chatbot.py: The chatbot interface on the application where users can select their use case and speak with BioRAG.
 * app.sh: The script needed to run the app.
 
 ## Setup instructions
