@@ -29,5 +29,5 @@ The necessary packages and versions can be found in the requirements.txt file. E
  RUN pip install python-dotenv==1.0.1
  RUN pip install qdrant_client==1.9.1
  RUN pip install streamlit==1.33.0
- RUN pip install azure-storage-blob
+ RUN pip install azure-storage-blob==12.20.0
 ```
