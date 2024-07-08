@@ -8,5 +8,4 @@ python-dotenv==1.0.1
 qdrant_client==1.9.1
 streamlit==1.33.0
 azure-storage-blob==12.20.0
-openpyxl==3.1.3
 
