@@ -19,15 +19,22 @@ The important files in this template are:
 
 ## Setup instructions
 The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
+
+Step 1
+Create a custom environment on Domino with a base environment of Domino Standard Environment pyxx Rxx
+
+Step 2
+Under dockerfile instructions use the instructions provided below to install the python packages into the environment.
+
  ```
- RUN pip install langchain==0.2.0
- RUN pip install langchain_community==0.2.0
- RUN pip install langchain_openai==0.1.7
- RUN pip install langchain_text_splitters==0.2.0
- RUN pip install pandas==2.2.2
- RUN pip install pdfplumber==0.11.0
- RUN pip install python-dotenv==1.0.1
- RUN pip install qdrant_client==1.9.1
- RUN pip install streamlit==1.33.0
- RUN pip install azure-storage-blob==12.20.0
+ RUN pip install langchain==0.2.0 --user
+ RUN pip install langchain_community==0.2.0 --user
+ RUN pip install langchain_openai==0.1.7 --user
+ RUN pip install langchain_text_splitters==0.2.0 --user
+ RUN pip install pandas==2.2.2 --user
+ RUN pip install pdfplumber==0.11.0 --user
+ RUN pip install python-dotenv==1.0.1 --user
+ RUN pip install qdrant_client==1.9.1 --user
+ RUN pip install streamlit==1.33.0 --user
+ RUN pip install azure-storage-blob==12.20.0 --user
 ```
