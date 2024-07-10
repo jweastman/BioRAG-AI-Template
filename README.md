@@ -24,6 +24,7 @@ The important files in this template are:
 * [app.sh](https://github.com/jweastman/BioRAG-AI-Template/blob/main/app.sh): The script needed to run the app.
 
 ## Setup instructions
+### Environment Requirements 
 The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
 
 Step 1
@@ -44,6 +45,6 @@ Under dockerfile instructions use the instructions provided below to install the
  RUN pip install streamlit==1.33.0 --user
  RUN pip install azure-storage-blob==12.20.0 --user
 ```
-
+### Hardware Requirements 
 Step 3
 Utilize small hardware tier requirements  
