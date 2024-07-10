@@ -1,5 +1,9 @@
 # RAG Application Template
 
+##License
+This template is licensed under Apache 2.0 and contains the following components: 
+OpenAI
+
 ## What is a RAG Application?
 A Retrieval-Augmented Generation (RAG) application is a type of AI-powered system that combines the capabilities of retrieval-based models 
 and generation-based models. The main goal of a RAG application is to enhance the quality and accuracy of generated content by incorporating relevant 
