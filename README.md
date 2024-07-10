@@ -2,7 +2,9 @@
 
 ## License
 This template is licensed under Apache 2.0 and contains the following components: 
-OpenAI
+* Langchain [MIT](https://github.com/langchain-ai/langchain/blob/master/LICENSE)
+* [OpenAI](https://openai.com/policies/terms-of-use)
+
 
 ## What is a RAG Application?
 A Retrieval-Augmented Generation (RAG) application is a type of AI-powered system that combines the capabilities of retrieval-based models 
@@ -25,7 +27,7 @@ The important files in this template are:
 The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
 
 Step 1
-Create a custom environment on Domino with a base environment of Domino Standard Environment pyxx Rxx
+Create a custom environment on Domino with a base environment of Domino Standard Environment Pyxx Rxx
 
 Step 2
 Under dockerfile instructions use the instructions provided below to install the python packages into the environment.
@@ -42,3 +44,6 @@ Under dockerfile instructions use the instructions provided below to install the
  RUN pip install streamlit==1.33.0 --user
  RUN pip install azure-storage-blob==12.20.0 --user
 ```
+
+Step 3
+Utilize small hardware tier requirements  
