@@ -1,6 +1,6 @@
 # RAG Application Template
 
-##License
+## License
 This template is licensed under Apache 2.0 and contains the following components: 
 OpenAI
 
