@@ -28,7 +28,7 @@ The important files in this template are:
 The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
 
 Step 1
-Create a custom environment on Domino with a base environment of Domino Standard Environment Pyxx Rxx
+Create a custom environment on Domino with a base environment of Domino Standard Environment
 
 Step 2
 Under dockerfile instructions use the instructions provided below to install the python packages into the environment.
