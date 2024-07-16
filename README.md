@@ -12,7 +12,7 @@ and generation-based models. The main goal of a RAG application is to enhance th
 information retrieved from a vast knowledge base. This approach leverages the strengths of both retrieval and generation, providing more coherent and contextually appropriate outputs.
 
 ## About this template
-This project shows how to create an application using streamlit which is then hosted on Domino. We are using an Azure OpenAI embedding model to create the emebeddings of our documents and
+This project provides a template for a streamlit application which is then hosted on Domino. We are using an OpenAI embedding model to create the emebeddings of our documents and
 a gpt model (GPT-4, GPT-4o, etc.) as the base model. 
 
 The important files in this template are:
