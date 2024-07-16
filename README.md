@@ -24,13 +24,24 @@ The important files in this template are:
 * [app.sh](https://github.com/jweastman/BioRAG-AI-Template/blob/main/app.sh): The script needed to run the app.
 
 ## Setup instructions
+
+### External Services Set Up
+Step 1
+Ensure you have the following external services set up with the correct credentials provided in the .env file
+* Azure blob storage
+* Qdrant Vector Database
+* Azure OpenAI Chat Model Resource
+* Azure OpenAI Embeddings Resource
+
+Should you require assistance setting these services up, please reach out to Gabriele Oliva from BIP, gabriele.oliva@bip-group.com
+
 ### Environment Requirements 
 The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
 
-Step 1
+Step 2
 Create a custom environment on Domino with a base environment of Domino Standard Environment
 
-Step 2
+Step 3
 Under dockerfile instructions use the instructions provided below to install the python packages into the environment.
 
  ```
@@ -46,5 +57,5 @@ Under dockerfile instructions use the instructions provided below to install the
  RUN pip install azure-storage-blob==12.20.0 --user
 ```
 ### Hardware Requirements 
-Step 3
+Step 4
 Utilize small hardware tier requirements  
