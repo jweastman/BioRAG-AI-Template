@@ -28,10 +28,14 @@ The important files in this template are:
 ### External Services Set Up
 Step 1
 Ensure you have the following external services set up with the correct credentials provided in the .env file
-* Azure blob storage
-* Qdrant Vector Database
-* Azure OpenAI Chat Model Resource
-* Azure OpenAI Embeddings Resource
+* Azure blob storage - [Credentials tutorial](https://learn.microsoft.com/en-us/answers/questions/1071173/where-can-i-find-storage-account-connection-string)
+* Qdrant Vector Database - [Tutorial](https://qdrant.tech/documentation/quickstart/)
+* Azure OpenAI Chat Model Resource - [Deployment Types](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/deployment-types) (See below for Azure OpenAI Keys and Endpoints)
+* Azure OpenAI Embeddings Resource - [Deployment Types](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/deployment-types) (See below for Azure OpenAI Keys and Endpoints)
+
+### Location of keys for Azure OpenAI Resources
+  ![image](https://github.com/user-attachments/assets/ad50eda1-a1a6-4ca7-9754-c2fdf2d46a54)
+
 
 Should you require assistance setting these services up, please reach out to Gabriele Oliva from BIP, gabriele.oliva@bip-group.com
 
