@@ -9,7 +9,7 @@ st.title('👩‍🔬🔬💬 BioRAG Analyser')
 st.header('📑 Your Use Cases')
 
 if "user" not in st.session_state.keys():
-    st.session_state["user"] = "Testing" # os.environ['DOMINO_STARTING_USERNAME']
+    st.session_state["user"] = os.environ['DOMINO_STARTING_USERNAME']
 
 use_case_df = get_use_case_dataframe(st.session_state.user)
 
