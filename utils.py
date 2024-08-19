@@ -7,8 +7,11 @@ import pickle
 from base_agent import BaseAgent
 from langchain.prompts import PromptTemplate
 import pandas as pd
+from docx import Document
 from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import ResourceNotFoundError
+
+
 
 from dotenv import load_dotenv
 load_dotenv() # Load our environment variables
@@ -43,6 +46,7 @@ Expand the prompt for GPT-4o with the following chat history only in case the in
 The prompt must ask to GPT to: 
 - use only the information contained in the document 
 - never add information from the GPT background knowledge 
+- the answer must be in the same language of the question
 - explicitly tell to GPT-4o to answer in English.
 
 """
@@ -76,6 +80,10 @@ qa_prompt = PromptTemplate(
 def clean_texts(input_text):
     text = re.sub(r'\s+', ' ', input_text)
     return text
+
+
+def extract_source_names(source_documents):
+    return set([doc.metadata.get("source", "Unknown Source") for doc in source_documents])
 
 
 def extract_text_from_pdf(pdf_doc):
@@ -122,6 +130,20 @@ def text_to_docs(input_text):
     docs = text_splitter.create_documents([input_text]) # Split the text into chunks
     docs = [page.page_content for page in docs] # Extract only the text from each document object
     return docs
+
+
+def extract_text_from_docx(file):
+    """Extract text from a DOCX file."""
+    doc = Document(file)
+    text = ""
+    for para in doc.paragraphs:
+        text += para.text + "\n"
+    for table in doc.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                text += cell.text + "\t"
+            text += "\n"
+    return text
 
 
 def remove_duplicate_documents(documents):
@@ -180,11 +202,6 @@ def docs_to_vectordb(docs, collection_name):
         qdrant = False
 
     return qdrant
-
-
-# Function to extract document names
-def extract_source_names(source_documents):
-    return set([doc.metadata.get("source", "Unknown Source") for doc in source_documents])
 
 
 def upload_to_azure_blob(file_path):
@@ -287,6 +304,10 @@ def get_use_case_dataframe(user_id):
         os.remove(user_use_cases_df_file_path)
     
     except Exception as e:
+        try:
+            os.remove(user_use_cases_df_file_path)
+        except Exception as _e:
+            pass
         uc_df = pd.DataFrame(columns=['Use Case Name', 'Use Case Documents'])
     
     return uc_df
