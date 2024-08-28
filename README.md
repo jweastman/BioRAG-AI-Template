@@ -59,6 +59,7 @@ Under dockerfile instructions use the instructions provided below to install the
  RUN pip install qdrant_client==1.9.1 --user
  RUN pip install streamlit==1.33.0 --user
  RUN pip install azure-storage-blob==12.20.0 --user
+RUN pip install python-docx==1.1.1 --user
 ```
 ### Hardware Requirements 
 Step 4
