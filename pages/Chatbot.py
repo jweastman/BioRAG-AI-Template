@@ -12,7 +12,7 @@ load_dotenv() # Load our environment variables
 # Function to show the username popup
 def username_popup():
     st.title("Welcome!")
-    st.write("Please enter your username to continue.")
+    st.write("Please enter your Domino username to continue.")
     username = st.text_input("Enter your username", key="username_input")
 
     if username:
