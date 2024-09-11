@@ -11,18 +11,18 @@ class BaseAgent:
     def __init__(self) -> None:
 
         self.model = AzureChatOpenAI(
-            deployment_name=os.getenv("AZURE_CHAT_DEPLOYMENT_NAME"),
-            model=os.getenv("AZURE_CHAT_MODEL"),
+            deployment_name=os.environ["AZURE_CHAT_DEPLOYMENT_NAME"],
+            model=os.environ["AZURE_CHAT_MODEL"],
             temperature=0,
-            openai_api_version=os.getenv("OPENAI_API_VERSION"),
-            openai_api_key=os.getenv("AZURE_CHAT_API_KEY"),
-            azure_endpoint=os.getenv("AZURE_CHAT_ENDPOINT")
+            openai_api_version=os.environ["OPENAI_API_VERSION"],
+            openai_api_key=os.environ["AZURE_CHAT_API_KEY"],
+            azure_endpoint=os.environ["AZURE_CHAT_ENDPOINT"]
         )
 
         self.embeddings = AzureOpenAIEmbeddings(
-            openai_api_type=os.getenv("OPEN_AI_TYPE"),
-            api_key=os.getenv("AZURE_EMBEDDINGS_API_KEY"),
-            azure_endpoint=os.getenv("AZURE_EMBEDDINGS_ENDPOINT"),
-            azure_deployment=os.getenv("AZURE_EMBEDDINGS_DEPLOYMENT_NAME"),
-            openai_api_version=os.getenv("OPENAI_API_VERSION")
+            openai_api_type=os.environ["OPEN_AI_TYPE"],
+            api_key=os.environ["AZURE_EMBEDDINGS_API_KEY"],
+            azure_endpoint=os.environ["AZURE_EMBEDDINGS_ENDPOINT"],
+            azure_deployment=os.environ["AZURE_EMBEDDINGS_DEPLOYMENT_NAME"],
+            openai_api_version=os.environ["OPENAI_API_VERSION"]
 )
