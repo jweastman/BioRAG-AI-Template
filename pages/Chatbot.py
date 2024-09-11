@@ -23,8 +23,8 @@ def username_popup():
 
 agent = BaseAgent()
 
-q_client = QdrantClient(url=os.getenv("QDRANT_URL"),
-                        api_key=os.getenv("QDRANT_KEY"))
+q_client = QdrantClient(url=os.environ["QDRANT_URL"],
+                        api_key=os.environ["QDRANT_KEY"])
 
 st.set_page_config(page_title="👩‍🔬🔬💬 BioRAG Analyser")
 st.title('👩‍🔬🔬💬 BioRAG Analyser')
