@@ -14,7 +14,7 @@ from azure.core.exceptions import ResourceNotFoundError
 
 
 from dotenv import load_dotenv
-load_dotenv() # Load our environment variables
+# load_dotenv() # Load our environment variables
 
 # Define our text splitter
 text_splitter = RecursiveCharacterTextSplitter(
@@ -26,8 +26,8 @@ is_separator_regex=False)
 
 # Initialise our Qdrant client to store vectors
 qdrant_client = QdrantClient(
-    url=os.getenv('QDRANT_URL'), 
-    api_key=os.getenv('QDRANT_KEY'),
+    url=os.environ["QDRANT_URL"], 
+    api_key=os.environ["QDRANT_KEY"],
 )
 
 # Initialise Base agent for embeddings
@@ -192,8 +192,8 @@ def docs_to_vectordb(docs, collection_name):
         qdrant = Qdrant.from_documents(
             documents=docs,
             embedding=agent.embeddings,
-            url=os.getenv("QDRANT_URL"),
-            api_key=os.getenv("QDRANT_KEY"),
+            url=os.environ["QDRANT_URL"],
+            api_key=os.environ["QDRANT_KEY"],
             collection_name=f"{collection_name}_documents",
             force_recreate=True
         )
@@ -215,8 +215,8 @@ def upload_to_azure_blob(file_path):
     Args:
         file_path (str): The local path to the file that needs to be uploaded.
     """
-    blob_service_client = BlobServiceClient.from_connection_string(os.getenv("AZURE_BLOB_CONNECTION_STRING"))
-    blob_client = blob_service_client.get_blob_client(container=os.getenv("AZURE_BLOB_CONTAINER_NAME"), blob=file_path)
+    blob_service_client = BlobServiceClient.from_connection_string(os.environ["AZURE_BLOB_CONNECTION_STRING"])
+    blob_client = blob_service_client.get_blob_client(container=os.environ["AZURE_BLOB_CONTAINER_NAME"], blob=file_path)
     try:
         with open(file_path, "rb") as data:
             blob_client.upload_blob(data, overwrite=True)
@@ -241,8 +241,8 @@ def get_azure_blob(azure_blob_path):
         object: The deserialized object from the blob. If an error occurs, returns an empty list.
 
     """
-    blob_service_client = BlobServiceClient.from_connection_string(os.getenv("AZURE_BLOB_CONNECTION_STRING"))
-    blob_client = blob_service_client.get_blob_client(container=os.getenv("AZURE_BLOB_CONTAINER_NAME"), blob=azure_blob_path)
+    blob_service_client = BlobServiceClient.from_connection_string(os.environ["AZURE_BLOB_CONNECTION_STRING"])
+    blob_client = blob_service_client.get_blob_client(container=os.environ["AZURE_BLOB_CONTAINER_NAME"], blob=azure_blob_path)
     try:
         with open(azure_blob_path, "wb") as download_file:
             download_file.write(blob_client.download_blob().readall())
@@ -269,8 +269,8 @@ def delete_azure_blob(azure_blob_path):
     Args:
         azure_blob_path (str): The path (name) of the blob in Azure Blob Storage to be deleted.
     """
-    blob_service_client = BlobServiceClient.from_connection_string(os.getenv("AZURE_BLOB_CONNECTION_STRING"))
-    blob_client = blob_service_client.get_blob_client(container=os.getenv("AZURE_BLOB_CONTAINER_NAME"), blob=azure_blob_path)
+    blob_service_client = BlobServiceClient.from_connection_string(os.environ["AZURE_BLOB_CONNECTION_STRING"])
+    blob_client = blob_service_client.get_blob_client(container=os.environ["AZURE_BLOB_CONTAINER_NAME"], blob=azure_blob_path)
     try:
         blob_client.delete_blob()
     except ResourceNotFoundError as e:
@@ -293,8 +293,8 @@ def get_use_case_dataframe(user_id):
                       returns an empty DataFrame with columns 'Use Case Name' and 'Use Case Documents'.
     """
     user_use_cases_df_file_path = f"{user_id}_use_cases_df.pkl"
-    blob_service_client = BlobServiceClient.from_connection_string(os.getenv("AZURE_BLOB_CONNECTION_STRING"))
-    blob_client = blob_service_client.get_blob_client(container=os.getenv("AZURE_BLOB_CONTAINER_NAME"), blob=user_use_cases_df_file_path)
+    blob_service_client = BlobServiceClient.from_connection_string(os.environ["AZURE_BLOB_CONNECTION_STRING"])
+    blob_client = blob_service_client.get_blob_client(container=os.environ["AZURE_BLOB_CONTAINER_NAME"], blob=user_use_cases_df_file_path)
     
     try:
         # Download the blob to a file
