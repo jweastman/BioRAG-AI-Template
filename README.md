@@ -63,4 +63,31 @@ RUN pip install python-docx==1.1.1 --user
 ```
 ### Hardware Requirements 
 Step 4
-Utilize small hardware tier requirements  
+Utilize small hardware tier requirements
+
+### Environment Variables
+
+In your domino project, you will want to add the following environment variables in your project's settings:
+
+![image](https://github.com/user-attachments/assets/8075217e-bde7-4f17-b46d-3571d5f59674)
+
+
+| Environment Variable Name                 | Your value                            |
+|-------------------------------------------|---------------------------------------|
+| QDRANT_URL                                | "YOUR QDRANT URL"                     |
+| QDRANT_KEY                                | "YOUR QDRANT KEY"                     |
+| AZURE_EMBEDDINGS_DEPLOYMENT_NAME          | "YOUR AZURE EMBEDDINGS DEPLOYMENT NAME"|
+| AZURE_EMBEDDINGS_API_KEY                  | "YOUR AZURE EMBEDDINGS API KEY"       |
+| AZURE_EMBEDDINGS_MODEL_NAME               | "text-embedding-ada-002"              |
+| AZURE_EMBEDDINGS_ENDPOINT                 | "YOUR AZURE EMBEDDINGS ENDPOINT"      |
+| OPENAI_API_VERSION                        | "2023-05-15"                          |
+| OPEN_AI_TYPE                              | "azure"                               |
+| AZURE_CHAT_ENDPOINT                       | "YOUR AZURE CHAT ENDPOINT"            |
+| AZURE_CHAT_DEPLOYMENT_NAME                | "YOUR AZURE CHAT DEPLOYMENT NAME"     |
+| AZURE_CHAT_API_KEY                        | "YOUR AZURE CHAT API KEY"             |
+| AZURE_CHAT_MODEL                          | "YOUR AZURE CHAT MODEL"               |
+| AZURE_BLOB_CONTAINER_NAME                 | "YOUR AZURE BLOB CONTAINER NAME"      |
+| AZURE_BLOB_CONNECTION_STRING              | "YOUR AZURE BLOB CONNECTION STRING"   |
+
+Once all are saved, you are ready!
+
