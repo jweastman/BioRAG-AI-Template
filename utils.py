@@ -12,10 +12,6 @@ from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import ResourceNotFoundError
 
 
-
-from dotenv import load_dotenv
-# load_dotenv() # Load our environment variables
-
 # Define our text splitter
 text_splitter = RecursiveCharacterTextSplitter(
 chunk_size=1000,
